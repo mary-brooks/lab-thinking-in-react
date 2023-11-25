@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2 {
+  margin: 20px 0 10px;
+}
+
+#searchbar {
+  width: 800px;
+  height: auto;
+  font-size: 16px;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+table,
+tr {
+  width: 850px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#table-header {
+  background-color: lightgray;
+  color: gray;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+}
+
+.in-stock {
+  color: black;
+}
+
+.out-of-stock {
+  color: red;
+}
