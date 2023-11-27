@@ -1,6 +1,16 @@
 import ProductRow from './ProductRow';
 
-function ProductTable({ products }) {
+// ProductTable receives products and searchText as props
+function ProductTable({ products, searchText, showInStockOnly }) {
+  // filter the products based on the searchText and checkbox state
+  const filteredProducts = products.filter((product) => {
+    return (
+      product.name.toLowerCase().includes(searchText.toLowerCase()) &&
+      (!showInStockOnly || (showInStockOnly && product.inStock))
+    );
+  });
+
+  // render the ProductTable component displaying filtered products
   return (
     <div>
       <table>
@@ -11,7 +21,7 @@ function ProductTable({ products }) {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {filteredProducts.map((product) => {
             return <ProductRow key={product.id} product={product} />;
           })}
         </tbody>
